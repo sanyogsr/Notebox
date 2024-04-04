@@ -1,0 +1,152 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100vh;
+    width: 250px;
+    background: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .side-menu.open {
+    right: 0;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    /* margin: 20px 0; */
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+.Navbar-container {
+    background: #e2e6e9;
+    height: 110px;
+    display: flex;
+    width: 100%;
+    /* align-items: center; */
+    justify-content: center;
+    
+
+
+  }
+  
+  .main-container {
+    margin-top: 15px;
+    
+    background: #ffffff;
+    height: 70px;
+    width: 75%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+  }
+  
+  .user-portion {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .user-portion .image {
+    width: 50px;
+    height: 50px;
+    background: #8da6ff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+  }
+
+  .link{
+    text-decoration: none;
+   
+  }
+  
+  .user-portion .username {
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: capitalize; 
+    font-display: none;
+  background: #8da6ff;
+  color: white;
+  
+  padding: 5px 15px;
+  border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  .nav-list-item {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  
+  .nav-list-item:hover {
+    color: #8da6ff;
+  }
+  
+  .logout-image {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+
+
+
+  @media screen and (max-width: 700px) {
+    /* Adjust styles for smaller screens */
+    .main-container {
+      width: 90%;
+      
+    }
+.nav-list{
+    display: none;
+}
+
+
+.logout-image{
+    display: none;
+}
+
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 35px;
+    right: 40px;
+  }
+
+  .menu-list {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .menu-list-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+  }
+}
