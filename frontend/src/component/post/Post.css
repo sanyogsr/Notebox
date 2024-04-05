@@ -166,7 +166,7 @@
 @media only screen and (max-width: 700px) {
     .post-container{
         height: 56vh;
-        padding-bottom:2vh;
+        padding-bottom:1vh;
         margin-bottom: 3vh;
         width: 100%;
     }
@@ -177,7 +177,7 @@
     .post-topbar-name{
         font-size: 15px;
         font-weight: 700;
-        color: rgb(8, 43, 43);
+        color: #ffffff;
     }
     .post-topbar-desc{
         margin-left: 1vh;

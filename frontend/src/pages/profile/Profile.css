@@ -212,16 +212,20 @@
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .profile-container {
     width: 100%;
     padding-left: 3vw;
     padding-right: 3vw;
   }
-  .profile-top-img-container img {
+
+  .profile-top-img-container{
+    display: none;
+  }
+  /* .profile-top-img-container img {
     width: 10vh;
     height: 10vh;
-  }
+  } */
   .user-timeline {
     display: block;
     margin-top: 6vh;

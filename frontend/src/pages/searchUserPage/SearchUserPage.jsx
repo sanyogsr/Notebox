@@ -8,9 +8,15 @@ import Navbar from "../../component/Navbar";
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
   ${"" /* margin-top: 3vh; */}
-  padding: 60px;
+  padding: 10px;
   background: #e2e6e9;
+`;
+
+const SearchUserContainer = styled.div`
+  width: 90%;
 `;
 
 const SearchUserPage = () => {
@@ -18,7 +24,11 @@ const SearchUserPage = () => {
     <>
       <Navbar />
       <Container>
-        <BuildConversation />
+        <SearchUserContainer>
+          {" "}
+          <BuildConversation />
+        </SearchUserContainer>
+        {/* <BuildConversation /> */}
       </Container>
     </>
   );

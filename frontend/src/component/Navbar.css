@@ -116,8 +116,7 @@
 
 
 
-  @media screen and (max-width: 700px) {
-    /* Adjust styles for smaller screens */
+  @media screen and (max-width: 1200px) {
     .main-container {
       width: 90%;
       
@@ -131,13 +130,17 @@
     display: none;
 }
 
+
 .menu-icon {
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    top: 35px;
-    right: 40px;
+    
+    display: block; /* Change display to block */
+      cursor: pointer;
+  
+      position: fixed; /* Change position to fixed */
+      top: 40px;
+      right: 40px; /* Adjust right value to create space from the edge */
+      color: black;
+      z-index: 1001;
   }
 
   .menu-list {

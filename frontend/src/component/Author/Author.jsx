@@ -21,15 +21,18 @@ const Author = () => {
   return (
     <>
     <div className="featured">
-      <p className="featured-author">Featured Authors :</p>
+      {/* <p className="featured-author">Featured Authors :</p> */}
       {!isauthors ? (
         <CircularLoader item={"featured author"} />
       ) : (
         <div className="author-container">
+        <p className="featured-author">Featured Authors :</p>
+
           
           {isauthors &&
             authors.map((author, i) => {
               return (
+                <div className="author-card-container">
                 <div className="author-card">
                   <Link
                     to={`/profile/${author._id}`}
@@ -66,6 +69,7 @@ const Author = () => {
                   {/* {author.institution &&
                      <p className="author-institution">{author.institution}</p>
                     } */}
+                </div>
                 </div>
               );
             })}
