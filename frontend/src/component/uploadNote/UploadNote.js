@@ -38,17 +38,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 // const PDFFile = () =>{
 //   <Document>
-//     <Page style = {styles.body}> 
+//     <Page style = {styles.body}>
 //     <Text {styles.header} fixed></Text>
 //     <Image {styles.image} src = {LebronStretch}/>
 //     </Page>
 //   </Document>
 // }
-
-
 
 const UploadNote = () => {
   const { currentUser: user } = useSelector((state) => state.user);
@@ -174,7 +171,6 @@ const UploadNote = () => {
     </>
   );
 };
-
 
 export default UploadNote;
 // const UploadNote = () => {
