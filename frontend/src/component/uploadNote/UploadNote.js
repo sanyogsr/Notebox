@@ -88,25 +88,6 @@ const UploadNote = () => {
       window.location.reload();
       alert("successfully uploaded");
     } catch (err) {}
-    // const uploadNoteFormSubmitHandler = async (e) => {
-    //   e.preventDefault();
-    //   const formData = new FormData();
-    //   formData.append("file", file);
-    //   formData.append("notename", notename.current.value);
-    //   formData.append("desc", descritpion.current.value);
-    //   try {
-    //     await axios.post("http://localhost:5000/upload", formData, {
-    //       headers: {
-    //         "Content-Type": "multipart/form-data",
-    //       },
-    //     });
-    //     alert("File uploaded successfully");
-    //   } catch (error) {
-    //     console.error(error);
-    //     alert("Failed to upload file");
-    //   }
-    // };
-    
   };
 
   const classes = useStyles();
@@ -166,14 +147,13 @@ const UploadNote = () => {
               ></input>
 
               <input
-                accept=".pdf"
-                type="file"
                 // accept="application/pdf"
                 type="file"
                 id="upload-note-input"
-                onChange={(e) => setfile(e.target.value)}
-                placeholder="Url of note*"
-                required
+                accept=".pdf, .txt, .doc, .docx"
+                onChange={(e) => setfile(e.target.files[0])}
+                placeholder="Choose your file"
+                required 
               ></input>
 
               <label for="thumbnail-file-upload" className="custom-file-upload">

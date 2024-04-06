@@ -57,10 +57,10 @@ const Navbar = () => {
 
         <div>
           {/* <Link to={"/profile/" + currentUser._id} className="link"> */}
-            <div className="user-portion">
-              {/* <div className="image">    */}
+          <div className="user-portion">
+            {/* <div className="image">    */}
 
-              {/* <img
+            {/* <img
                 alt="user Immage"
                 src={
                   currentUser && currentUser.profilePicture
@@ -69,12 +69,11 @@ const Navbar = () => {
                 }
                 className="image"
               /> */}
-              <Link to={"/"} className="link">
-                <h2>NoteBox</h2>
-              </Link>
-
-              </div>
-              {/* <div className="username">{currentUser.username}</div>
+            <Link to={"/"} className="link">
+              <h2>NoteBox</h2>
+            </Link>
+          </div>
+          {/* <div className="username">{currentUser.username}</div>
             </div> */}
           {/* </Link> */}
         </div>
