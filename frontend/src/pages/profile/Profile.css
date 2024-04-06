@@ -6,7 +6,7 @@
 }
 .profile-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   
   padding-left: 10vw;
   padding-right: 12vw;
@@ -180,7 +180,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border-radius: 5%; */
+
+  /* border-radius: 20px; */
 
 }
 .total-gain {
@@ -191,7 +192,7 @@
   padding: 1vh 1vh;
   background-color: #8da6ff;
   align-items: center;
-  /* border-radius: 25%; */
+  border-radius: 25px;
   justify-content: space-evenly;
   margin-bottom: 2vh;
 }
@@ -225,16 +226,21 @@
   
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .profile-container {
     width: 100%;
     padding-left: 3vw;
     padding-right: 3vw;
+  
+  }
+  .profile-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
   }
 
-  .profile-top-img-container{
-    display: none;
-  }
+  
   .profile-top-img-container img {
     width: 10vh;
     height: 10vh;
@@ -245,6 +251,7 @@
   }
   .profile-desc {
     padding-left: 1vh;
+    margin-left: 0;
   }
   .follow-chat {
     width: 75%;

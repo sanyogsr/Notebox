@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 import User from "../model/Userschema.js";
 import Note from "../model/Noteschema.js";
-
+import multer from "multer";
 //create a post for selling a note
 
 router.post("/", async (req, res) => {
@@ -16,6 +16,20 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./pdfs");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   },
+// });
+
+// const upload = multer({ storage: storage });
+
+// router.post("/", upload.single("file"), (req, res) => {
+//   res.status(200).json({ message: "File uploaded successfully" });
+// });
 
 //update a note
 // here params id is of one post id created by itself mongo db

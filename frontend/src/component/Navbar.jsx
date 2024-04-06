@@ -56,11 +56,11 @@ const Navbar = () => {
         {/* username and profile picture */}
 
         <div>
-          <Link to={"/profile/" + currentUser._id} className="link">
+          {/* <Link to={"/profile/" + currentUser._id} className="link"> */}
             <div className="user-portion">
               {/* <div className="image">    */}
 
-              <img
+              {/* <img
                 alt="user Immage"
                 src={
                   currentUser && currentUser.profilePicture
@@ -68,12 +68,15 @@ const Navbar = () => {
                     : ""
                 }
                 className="image"
-              />
+              /> */}
+              <Link to={"/"} className="link">
+                <h2>NoteBox</h2>
+              </Link>
 
-              {/* </div> */}
-              <div className="username">{currentUser.username}</div>
-            </div>
-          </Link>
+              </div>
+              {/* <div className="username">{currentUser.username}</div>
+            </div> */}
+          {/* </Link> */}
         </div>
         {/* Navbar Links */}
 
@@ -109,15 +112,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* {isSideMenuOpen ? (
-        <FaTimes
-          className="menu-icon"
-          onClick={() => setIsSideMenuOpen(false)}
-        />
-      ) : (
-        <FaBars className="menu-icon" onClick={() => setIsSideMenuOpen(true)} />
-      )}
-    */}
       {isTop ? (
         isSideMenuOpen ? (
           <FaTimes

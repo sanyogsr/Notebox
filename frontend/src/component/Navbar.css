@@ -9,6 +9,13 @@
     z-index: 1000;
   }
   
+
+  .link h2{
+    background: #8da6ff;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+  }
   .side-menu.open {
     right: 0;
   }
@@ -43,6 +50,8 @@
 
 
   }
+
+
   
   .main-container {
     margin-top: 15px;
@@ -116,7 +125,7 @@
 
 
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     .main-container {
       width: 90%;
       
@@ -138,7 +147,7 @@
   
       position: fixed; /* Change position to fixed */
       top: 40px;
-      right: 40px; /* Adjust right value to create space from the edge */
+      right: 60px; /* Adjust right value to create space from the edge */
       color: black;
       z-index: 1001;
   }
