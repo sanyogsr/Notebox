@@ -8,7 +8,6 @@ import { register } from "../../redux/apiCalls";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-<<<<<<< HEAD
   background: #e2e6e9;
   display: flex;
   justify-content: center;
@@ -19,18 +18,6 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 400px;
   padding: 40px;
-=======
-  ${
-    "" /* background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ), 
-    url("https://img.freepik.com/free-vector/online-document-concept-illustration_114360-5453.jpg?w=900&t=st=1673501437~exp=1673502037~hmac=f7a813ace48ce8a1ce1be58c1d1507746faa24876235b9c94f44584380ed1cd5")
-    center; */
-  }
-  background-repeat: no-repeat;
-  background-size: contain;
->>>>>>> c049118335d070d53cfb425c1c46706f2061c424
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,14 +33,7 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-<<<<<<< HEAD
   width: 100%;
-=======
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 2px;
-  ${mobile({ flexDirection: "column", flexWrap: "nowrap" })}
->>>>>>> c049118335d070d53cfb425c1c46706f2061c424
 `;
 
 const Input = styled.input`
@@ -107,18 +87,6 @@ const Register = () => {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
 
-<<<<<<< HEAD
-=======
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   if (password !== confirmpassword) {
-  //     alert("Passwords do not match");
-  //     return;
-  //   }
-  //   register(dispatch, { firstname, lastname, username, email, password });
-  // };
-
->>>>>>> c049118335d070d53cfb425c1c46706f2061c424
   const handleClick = (e) => {
     e.preventDefault();
     if (password === confirmpassword) {
@@ -130,15 +98,8 @@ const Register = () => {
 
   return (
     <Container>
-<<<<<<< HEAD
       <Wrapper>
         <Title>Create an Account</Title>
-=======
-      <TitleNav>NoteBoX</TitleNav>
-      <Wrapper>
-        <Title>Create an Account</Title>
-
->>>>>>> c049118335d070d53cfb425c1c46706f2061c424
         <Form>
           <Input
             placeholder="First Name"
