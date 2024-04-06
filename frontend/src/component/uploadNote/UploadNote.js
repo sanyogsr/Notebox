@@ -151,7 +151,7 @@ const UploadNote = () => {
                 type="file"
                 id="upload-note-input"
                 accept=".pdf, .txt, .doc, .docx"
-                onChange={(e) => setfile(e.target.files[0])}
+                onChange={(e) => setfile(e.target.files)}
                 placeholder="Choose your file"
                 required 
               ></input>
