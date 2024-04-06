@@ -7,6 +7,7 @@
 .profile-container {
   width: 100%;
   height: 100%;
+  
   padding-left: 10vw;
   padding-right: 12vw;
   padding-top: 4vh;
@@ -92,8 +93,11 @@
 }
 
 .followers-followings {
+
   display: flex;
   margin-top: 1vh;
+  font-size: medium;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .followers-followings p {
   line-height: 17px;
@@ -101,7 +105,8 @@
   margin-left: 1px;
   margin-right: 1px;
   font-weight: 400;
-  color: rgb(54, 51, 51);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(21, 24, 84);
 }
 .follow-chat {
   display: flex;
@@ -143,11 +148,13 @@
 .follow {
   box-shadow: 0px 1px 3px rgb(108, 172, 241);
   color: white;
-  box-shadow: 0px 0px 7px 7px rgb(233, 238, 233);
+  box-shadow: 0px 0px 5px 5px #a0bffd;
   background-color: rgb(115, 155, 247);
   border: none;
   display: flex;
   align-items: center;
+  align-self: center ;
+  /* border-radius: 25%; */
   font-size: 16px;
   cursor: pointer;
   font-weight: 500;
@@ -167,21 +174,24 @@
   justify-content: space-between;
   margin-top: 4vh;
   width: 100%;
+ 
 }
 .gain-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border-radius: 5%; */
 
 }
 .total-gain {
   height: 15vh;
   width: 10vw;
   display: flex;
-  border: 1px solid brown;
+  border: 3px solid rgb(157, 188, 255);
   padding: 1vh 1vh;
   background-color: #8da6ff;
   align-items: center;
+  /* border-radius: 25%; */
   justify-content: space-evenly;
   margin-bottom: 2vh;
 }
@@ -195,6 +205,7 @@
 }
 .gain-desc {
   font-size: 15px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .user-post-profile {
   display: flex;
@@ -210,6 +221,8 @@
 }
 .contributions-phone {
   display: none;
+  
+  
 }
 
 @media only screen and (max-width: 1200px) {
@@ -222,10 +235,10 @@
   .profile-top-img-container{
     display: none;
   }
-  /* .profile-top-img-container img {
+  .profile-top-img-container img {
     width: 10vh;
     height: 10vh;
-  } */
+  }
   .user-timeline {
     display: block;
     margin-top: 6vh;
@@ -240,6 +253,7 @@
     width: 24vw;
     height: 5vh;
     margin-right: 1vh;
+
   }
   .start-conversation-1 {
     height: 5vh;
@@ -265,5 +279,6 @@
   }
   .gain-desc {
     font-size: 12px;
+
   }
 }
