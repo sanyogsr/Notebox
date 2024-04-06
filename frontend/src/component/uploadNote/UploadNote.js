@@ -42,12 +42,13 @@ const UploadNote = () => {
   const notename = useRef();
   const descritpion = useRef();
   const [isupload, setsetisupload] = useState(false);
-  const [fileurl, setfileurl] = useState("");
+  const [file, setfile] = useState("");
   const [fileimg, setfileimg] = useState(null);
   const ShowFormHandler = () => {
     if ((ShowForm.current.style.display = "flex"))
       ShowForm.current.style.display = "none";
   };
+
   const uploadNoteFormSubmitHandler = async (e) => {
     alert("Uploading started, it will take few minutes...");
     e.preventDefault();
@@ -55,7 +56,7 @@ const UploadNote = () => {
       userId: user._id,
       desc: descritpion.current.value,
       notename: notename.current.value,
-      notefilename: fileurl,
+      notefilename: file,
     };
     if (fileimg) {
       const data = new FormData();
@@ -73,37 +74,6 @@ const UploadNote = () => {
       alert("successfully uploaded");
     } catch (err) {}
   };
-  const [fileUrl, setFileUrl] = useState("");
-
-  // Update the uploadNoteFormSubmitHandler function to use the server URL
-  // const uploadNoteFormSubmitHandler = async (e) => {
-  //   e.preventDefault();
-  //   // Upload the file to the server
-  //   const formData = new FormData();
-  //   formData.append("file", fileimg);
-  //   const response = await axios.post("/notes", formData);
-
-  //   // Update the fileUrl state with the server URL
-  //   setFileUrl(response.data.fileUrl);
-
-  //   // Update the newNote object to use the server URL
-  //   const newNote = {
-  //     userId: user._id,
-  //     desc: descritpion.current.value,
-  //     notename: notename.current.value,
-  //     notefilename: response.data.fileUrl,
-  //     // thumbnailfilename: thumbnailUrl,
-  //   };
-
-  //   // Submit the newNote to the server
-  //   try {
-  //     await publicRequest.post("/notes", newNote);
-  //     window.location.reload();
-  //     alert("successfully uploaded");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
 
   const classes = useStyles();
   return (
@@ -162,11 +132,14 @@ const UploadNote = () => {
               ></input>
 
               <input
-                type="file"
-                accept=".pdf"
-                className="file-uploading-notes"
-                onChange={(e) => setfileurl(e.target.value)}
-              />
+                // accept="application/pdf"
+                type="text"
+                id="upload-note-input"
+                onChange={(e) => setfile(e.target.value)}
+                placeholder="Url of note*"
+                required
+              ></input>
+
               <label for="thumbnail-file-upload" className="custom-file-upload">
                 <Image className={classes.upload} />
                 <p>Upload a thumbnail image</p>
@@ -191,3 +164,115 @@ const UploadNote = () => {
 };
 
 export default UploadNote;
+// const UploadNote = () => {
+//   const notename = useRef();
+//   const descritpion = useRef();
+//   const { currentUser: user } = useSelector((state) => state.user);
+
+//   const [isupload, setsetisupload] = useState(false);
+//   const [fileimg, setfileimg] = useState(null);
+
+//   const ShowFormHandler = () => {
+//     setsetisupload(!isupload);
+//   };
+
+//   const uploadNoteFormSubmitHandler = async (e) => {
+//     e.preventDefault();
+//     alert("Uploading started, it will take a few minutes...");
+//     const newNote = {
+//       userId: user._id,
+//       desc: descritpion.current.value,
+//       notename: notename.current.value,
+//     };
+
+//     try {
+//       // Upload PDF file to Cloudinary
+//       const pdfData = new FormData();
+//       pdfData.append("file", fileimg);
+//       pdfData.append("upload_preset", "handnotepdfs");
+//       const res = await axios.post(
+//         "https://api.cloudinary.com/v1_1/dw2fok6if/image/upload",
+//         pdfData
+//       );
+//       newNote.pdfUrl = res.data.secure_url;
+
+//       // Save newNote to MongoDB
+//       await publicRequest.post("/notes", newNote);
+//       alert("Successfully uploaded");
+//       window.location.reload();
+//     } catch (err) {
+//       console.error("Error uploading note:", err);
+//     }
+//   };
+
+//   const classes = useStyles();
+//   return (
+//     <>
+//       {!isupload && (
+//         <div className="upload-container">
+//           <div className="uploadNote-post" onClick={ShowFormHandler}>
+//             <p className="uploadNote-post-text">Upload Your Note</p>
+//             <CloudUpload className={classes.uploadIcon} />
+//           </div>
+//         </div>
+//       )}
+//       {isupload && (
+//         <div className="uploadNote-form-active">
+//           <div className="uploadNote-form-container">
+//             <div className="upload-note-top">
+//               <div className="upload-note-top-left">
+//                 <AddCircle className={classes.uploadAdd} />
+//                 <p className="upload-note-title">Upload a Note</p>
+//               </div>
+//               <Close
+//                 onClick={ShowFormHandler}
+//                 className={classes.closeIcon}
+//                 id="close-icon"
+//               />
+//             </div>
+//             <form
+//               onSubmit={uploadNoteFormSubmitHandler}
+//               className="uploadNote-form"
+//             >
+//               <input
+//                 type="text"
+//                 placeholder="Notename (not more than 30 characters)*"
+//                 className="uploadNote-form-note-name"
+//                 ref={notename}
+//                 maxLength="30"
+//                 required
+//               ></input>
+//               <input
+//                 type="text"
+//                 placeholder="Description (not more than 300 characters)*"
+//                 className="uploadNote-form-description"
+//                 ref={descritpion}
+//                 maxLength="300"
+//                 required
+//               ></input>
+
+//               <label for="pdf-file-upload" className="custom-file-upload">
+//                 <PictureAsPdf className={classes.upload} />
+//                 <p>Upload a PDF file</p>
+//                 <CloudUpload className={classes.upload} />
+//               </label>
+//               <input
+//                 type="file"
+//                 id="pdf-file-upload"
+//                 accept=".pdf"
+//                 onChange={(e) => setfileimg(e.target.files[0])}
+//                 required
+//               ></input>
+
+//               <button type="submit" className="uploadNote-form-submit-button">
+//                 Upload
+//               </button>
+//             </form>
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default UploadNote;

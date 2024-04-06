@@ -127,6 +127,11 @@
     border-radius: 25px;
   
 }
+
+.file-uploading-notes{
+ margin: 20px;
+
+}
 .custom-file-upload p{
      font-size: 20px;
      font-weight: 300;
