@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { logout, search } from "../redux/userRedux";
 import { useSelector, useDispatch } from "react-redux";
+
 // import { CiUser } from "react-icons/ci";
 
 const Navbar = () => {
@@ -117,7 +118,7 @@ const Navbar = () => {
         <FaBars className="menu-icon" onClick={() => setIsSideMenuOpen(true)} />
       )}
     */}
-    {isTop ? (
+      {isTop ? (
         isSideMenuOpen ? (
           <FaTimes
             className="menu-icon"

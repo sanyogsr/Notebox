@@ -13,9 +13,9 @@ const Container = styled.div`
     "" /* background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
-    ),
+    ), 
     url("https://img.freepik.com/free-vector/online-document-concept-illustration_114360-5453.jpg?w=900&t=st=1673501437~exp=1673502037~hmac=f7a813ace48ce8a1ce1be58c1d1507746faa24876235b9c94f44584380ed1cd5")
-      center; */
+    center; */
   }
   background-repeat: no-repeat;
   background-size: contain;
@@ -49,6 +49,7 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+  border-radius: 2px;
   ${mobile({ flexDirection: "column", flexWrap: "nowrap" })}
 `;
 
@@ -108,6 +109,7 @@ const Register = () => {
   //   }
   //   register(dispatch, { firstname, lastname, username, email, password });
   // };
+
   const handleClick = (e) => {
     e.preventDefault();
     password === confirmpassword
@@ -122,67 +124,71 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <TitleNav>NoteSharing</TitleNav>
-      <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input
-            placeholder="first name"
-            onChange={(e) => setFirstname(e.target.value)}
-            type="text"
-            required
-          />
-          <Input
-            placeholder="last name"
-            onChange={(e) => setLastname(e.target.value)}
-            type="text"
-            required
-          />
-          <Input
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
-            type="text"
-            required
-          />
-          <Input
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            required
-          />
-          <Input
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            required
-          />
-          <Input
-            placeholder="confirm password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            type="password"
-            required
-          />
-          <LinkTag>
-            Already an user?
-            <Link to="/login">
-              <b>LOGIN</b>
-            </Link>
-          </LinkTag>
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button
-            onClick={handleClick}
-            //  disabled={isFetching}
-          >
-            CREATE
-          </Button>
-          {/* <Error>Something went wrong...</Error> */}
-        </Form>
-      </Wrapper>
-    </Container>
+    <div className="w-full bg-white py-{100%} px-{100%}">
+      <Container>
+        <TitleNav>NoteBoX</TitleNav>
+        <Wrapper>
+          <div className="flex justify-center">
+            <Title>Create an Account</Title>
+          </div>
+          <Form>
+            <Input
+              placeholder="first name"
+              onChange={(e) => setFirstname(e.target.value)}
+              type="text"
+              required
+            />
+            <Input
+              placeholder="last name"
+              onChange={(e) => setLastname(e.target.value)}
+              type="text"
+              required
+            />
+            <Input
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              required
+            />
+            <Input
+              placeholder="email"
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              required
+            />
+            <Input
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              required
+            />
+            <Input
+              placeholder="confirm password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              type="password"
+              required
+            />
+            <LinkTag>
+              Already an user?
+              <Link to="/login">
+                <b>LOGIN</b>
+              </Link>
+            </LinkTag>
+            <Agreement>
+              By creating an account, I consent to the processing of my personal
+              data in accordance with the <b>PRIVACY POLICY</b>
+            </Agreement>
+            <Button
+              onClick={handleClick}
+              //  disabled={isFetching}
+            >
+              CREATE
+            </Button>
+            {/* <Error>Something went wrong...</Error> */}
+          </Form>
+        </Wrapper>
+      </Container>
+    </div>
   );
 };
 
