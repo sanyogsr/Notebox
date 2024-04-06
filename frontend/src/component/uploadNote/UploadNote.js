@@ -13,6 +13,8 @@ import {
 import { publicRequest } from "../../requestMethods";
 import { makeStyles } from "@material-ui/core/styles";
 import { mobile } from "../../responsive";
+// import {Page, Text, Image, Document, StyleSheet} from '@react-pdf/renderer'
+
 const useStyles = makeStyles((theme) => ({
   uploadIcon: {
     color: "#8da6ff",
@@ -34,6 +36,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
   },
 }));
+
+
+// const PDFFile = () =>{
+//   <Document>
+//     <Page style = {styles.body}> 
+//     <Text {styles.header} fixed></Text>
+//     <Image {styles.image} src = {LebronStretch}/>
+//     </Page>
+//   </Document>
+// }
+
+
+
 const UploadNote = () => {
   const { currentUser: user } = useSelector((state) => state.user);
   const pf = "https://notesharingbackend-ankitkr437.onrender.com/images/";
@@ -133,11 +148,12 @@ const UploadNote = () => {
 
               <input
                 // accept="application/pdf"
-                type="text"
+                type="file"
                 id="upload-note-input"
-                onChange={(e) => setfile(e.target.value)}
-                placeholder="Url of note*"
-                required
+                accept=".pdf, .txt, .doc, .docx"
+                onChange={(e) => setfile(e.target.files[0])}
+                placeholder="Choose your file"
+                required 
               ></input>
 
               <label for="thumbnail-file-upload" className="custom-file-upload">
@@ -162,6 +178,7 @@ const UploadNote = () => {
     </>
   );
 };
+
 
 export default UploadNote;
 // const UploadNote = () => {
