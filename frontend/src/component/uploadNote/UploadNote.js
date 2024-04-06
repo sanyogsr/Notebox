@@ -162,11 +162,10 @@ const UploadNote = () => {
               ></input>
 
               <input
-                accept=".pdf, .txt, .docx, .doc"
-                type="file"
+                type="text"
                 id="upload-note-input"
-                onChange={(e) => setfile(e.target.files)}
-                placeholder="Choose your files"
+                onChange={(e) => setfile(e.target.value)}
+                placeholder="Upload your Url"
                 required
               ></input>
 
