@@ -124,71 +124,68 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full bg-white py-{100%} px-{100%}">
-      <Container>
-        <TitleNav>NoteBoX</TitleNav>
-        <Wrapper>
-          <div className="flex justify-center">
-            <Title>Create an Account</Title>
-          </div>
-          <Form>
-            <Input
-              placeholder="first name"
-              onChange={(e) => setFirstname(e.target.value)}
-              type="text"
-              required
-            />
-            <Input
-              placeholder="last name"
-              onChange={(e) => setLastname(e.target.value)}
-              type="text"
-              required
-            />
-            <Input
-              placeholder="username"
-              onChange={(e) => setUsername(e.target.value)}
-              type="text"
-              required
-            />
-            <Input
-              placeholder="email"
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              required
-            />
-            <Input
-              placeholder="password"
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              required
-            />
-            <Input
-              placeholder="confirm password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              type="password"
-              required
-            />
-            <LinkTag>
-              Already an user?
-              <Link to="/login">
-                <b>LOGIN</b>
-              </Link>
-            </LinkTag>
-            <Agreement>
-              By creating an account, I consent to the processing of my personal
-              data in accordance with the <b>PRIVACY POLICY</b>
-            </Agreement>
-            <Button
-              onClick={handleClick}
-              //  disabled={isFetching}
-            >
-              CREATE
-            </Button>
-            {/* <Error>Something went wrong...</Error> */}
-          </Form>
-        </Wrapper>
-      </Container>
-    </div>
+    <Container>
+      <TitleNav>NoteBoX</TitleNav>
+      <Wrapper>
+        <Title>Create an Account</Title>
+
+        <Form>
+          <Input
+            placeholder="first name"
+            onChange={(e) => setFirstname(e.target.value)}
+            type="text"
+            required
+          />
+          <Input
+            placeholder="last name"
+            onChange={(e) => setLastname(e.target.value)}
+            type="text"
+            required
+          />
+          <Input
+            placeholder="username"
+            onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            required
+          />
+          <Input
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            required
+          />
+          <Input
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            required
+          />
+          <Input
+            placeholder="confirm password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            type="password"
+            required
+          />
+          <LinkTag>
+            Already an user?
+            <Link to="/login">
+              <b>LOGIN</b>
+            </Link>
+          </LinkTag>
+          <Agreement>
+            By creating an account, I consent to the processing of my personal
+            data in accordance with the <b>PRIVACY POLICY</b>
+          </Agreement>
+          <Button
+            onClick={handleClick}
+            //  disabled={isFetching}
+          >
+            CREATE
+          </Button>
+          {/* <Error>Something went wrong...</Error> */}
+        </Form>
+      </Wrapper>
+    </Container>
   );
 };
 
