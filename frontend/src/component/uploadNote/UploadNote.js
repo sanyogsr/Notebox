@@ -162,11 +162,11 @@ const UploadNote = () => {
               ></input>
 
               <input
-                accept=".pdf .txt .docx .doc"
+                accept=".pdf, .txt, .docx, .doc"
                 type="file"
                 id="upload-note-input"
-                onChange={(e) => setfile(e.target.files[0])}
-                placeholder="Url of note*"
+                onChange={(e) => setfile(e.target.files)}
+                placeholder="Choose your files"
                 required
               ></input>
 
@@ -180,7 +180,7 @@ const UploadNote = () => {
                 type="file"
                 id="thumbnail-file-upload"
                 accept=".png,.jpeg,.jpg"
-                onChange={(e) => setfileimg(e.target.files[0])}
+                onChange={(e) => setfileimg(e.target.files)}
               ></input>
               <button type="submit" className="uploadNote-form-submit-button">
                 Upload
