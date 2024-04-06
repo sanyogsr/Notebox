@@ -37,17 +37,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 // const PDFFile = () =>{
 //   <Document>
-//     <Page style = {styles.body}> 
+//     <Page style = {styles.body}>
 //     <Text {styles.header} fixed></Text>
 //     <Image {styles.image} src = {LebronStretch}/>
 //     </Page>
 //   </Document>
 // }
-
-
 
 const UploadNote = () => {
   const { currentUser: user } = useSelector((state) => state.user);
@@ -106,7 +103,6 @@ const UploadNote = () => {
     //     alert("Failed to upload file");
     //   }
     // };
-    
   };
 
   const classes = useStyles();
@@ -166,12 +162,10 @@ const UploadNote = () => {
               ></input>
 
               <input
-                accept=".pdf"
-                type="file"
-                // accept="application/pdf"
+                accept=".pdf .txt .docx .doc"
                 type="file"
                 id="upload-note-input"
-                onChange={(e) => setfile(e.target.value)}
+                onChange={(e) => setfile(e.target.files[0])}
                 placeholder="Url of note*"
                 required
               ></input>
@@ -198,7 +192,6 @@ const UploadNote = () => {
     </>
   );
 };
-
 
 export default UploadNote;
 // const UploadNote = () => {
