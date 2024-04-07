@@ -62,14 +62,13 @@ const UploadNote = () => {
   const ShowForm = useRef();
   const notename = useRef();
   const descritpion = useRef();
-  const [isupload, setsetisupload] = useState(false);
-  const [file, setfile] = useState(null);
-  const [fileimg, setfileimg] = useState(null);
+  const [isupload,setsetisupload]=useState(false)
+  const [fileurl,setfileurl]=useState("")
+  const [fileimg,setfileimg]=useState(null)
   const ShowFormHandler = () => {
     if ((ShowForm.current.style.display = "flex"))
       ShowForm.current.style.display = "none";
   };
-
   const uploadNoteFormSubmitHandler = async (e) => {
 
     alert("Uploading started, it will take few minutes...")
@@ -106,9 +105,12 @@ const UploadNote = () => {
 
   const classes = useStyles();
   return (
-    <>
+    <div>
        {
-       !isupload &&
+       !isupload && (
+        <div className="upload-container" >
+          
+       
         <div className="uploadNote-post"  onClick={() => {setsetisupload((curr) => !curr);}}>
           <PictureAsPdf  className={classes.UploadPdfIcon}/>
           <p className="uploadNote-post-text">
@@ -116,8 +118,11 @@ const UploadNote = () => {
           </p>
           <CloudUpload className={classes.uploadIcon}/>
         </div>
-        }
-        { isupload && <div className="uploadNote-form-container" >
+        </div>)   }
+        { isupload && 
+        
+        ( <div className="uploadNote-form-active">
+        <div className="uploadNote-form-container" >
           <div className="upload-note-top">
           <div className="upload-note-top-left">
           <AddCircle className={classes.uploadAdd}/>
@@ -167,8 +172,9 @@ const UploadNote = () => {
             <button type="submit" className="uploadNote-form-submit-button">Upload</button>
           </form>
         </div>
-        }
-    </>
+        </div>
+        )}
+    </div>
   );
 };
 
