@@ -4,7 +4,7 @@ import "./conversation.css";
 
 export default function Conversation({ conversation, currentUser }) {
   const [user, setUser] = useState(null);
-  const PF ="https://notesharingbackend-ankitkr437.onrender.com/images/"
+  const PF = "https://notesharingbackend-ankitkr437.onrender.com/images/";
   useEffect(() => {
     const friendId = conversation.members.find((m) => m !== currentUser._id);
 
@@ -23,7 +23,11 @@ export default function Conversation({ conversation, currentUser }) {
     <div className="conversation">
       <img
         className="conversationImg"
-        src={user && user.profilePicture ? user.profilePicture : PF + "DefaultPic.png"}
+        src={
+          user && user.profilePicture
+            ? user.profilePicture
+            : PF + "DefaultPic.png"
+        }
         alt=""
       />
       <span className="conversationName">{user?.username}</span>

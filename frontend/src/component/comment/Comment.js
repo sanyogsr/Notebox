@@ -19,6 +19,8 @@ const Comment = () => {
   const [isfetchcomment,setisfetchcomment] =useState(false);
   const takedown=useRef(); 
 
+  //for adding a comment
+
   useEffect(()=>{
     const fetchComment =async(req,res)=>{
      try{

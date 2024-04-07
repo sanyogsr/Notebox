@@ -6,7 +6,9 @@ import "./chatOnline.css";
 export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
   const [friends, setFriends] = useState([]);
   const [onlineFriends, setOnlineFriends] = useState([]);
-  const PF="https://notesharingbackend-ankitkr437.onrender.com/images/";
+  const PF = "https://notesharingbackend-ankitkr437.onrender.com/images/";
+
+  //connect and chat with others
 
   useEffect(() => {
     const getFriends = async () => {
@@ -16,7 +18,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
     getFriends();
   }, [currentId]);
-  console.log(onlineUsers)
+  console.log(onlineUsers);
   useEffect(() => {
     setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
   }, [friends, onlineUsers]);
@@ -39,11 +41,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
           <div className="chatOnlineImgContainer">
             <img
               className="chatOnlineImg"
-              src={
-                o?.profilePicture
-                  ?o.profilePicture
-                  :PF + "DefaultPic.png"
-              }
+              src={o?.profilePicture ? o.profilePicture : PF + "DefaultPic.png"}
               alt=""
             />
             <div className="chatOnlineBadge"></div>
