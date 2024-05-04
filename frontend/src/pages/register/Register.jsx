@@ -143,7 +143,11 @@ const Register = () => {
             type="password"
             required
           />
-          <Button onClick={handleClick} disabled={isFetching}>
+          <Button
+            onClick={handleClick}
+
+            // disabled={isFetching}
+          >
             Create Account
           </Button>
         </Form>
